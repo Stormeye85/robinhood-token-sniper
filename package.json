@@ -1,0 +1,41 @@
+{
+  "name": "robinhood-token-sniper",
+  "version": "0.1.0",
+  "private": true,
+  "description": "TypeScript toolkit to deploy and verify ERC-20 tokens on Robinhood Chain",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "compile": "hardhat compile",
+    "compile:contracts": "hardhat compile",
+    "create-token": "hardhat run scripts/create-token.ts",
+    "create-token:testnet": "hardhat run scripts/create-token.ts --network robinhood-testnet",
+    "create-token:mainnet": "hardhat run scripts/create-token.ts --network robinhood",
+    "create-token:cli": "tsx src/cli/create-token.ts",
+    "mint": "hardhat run scripts/mint-token.ts",
+    "verify": "hardhat run scripts/verify-token.ts",
+    "verify:cli": "tsx src/cli/verify-token.ts",
+    "info": "tsx src/cli/token-info.ts",
+    "clean": "hardhat clean"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.4",
+    "pino": "^9.5.0",
+    "pino-pretty": "^13.0.0",
+    "viem": "^2.21.54",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/contracts": "^5.1.0",
+    "@types/node": "^22.10.1",
+    "hardhat": "^2.22.17",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
